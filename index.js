@@ -5,7 +5,6 @@ const countLabel = document.getElementById("countLabel");
 
 let count = 0;
 
-
 // Increase Button Function
 increaseBtn.onclick = function () {
   count = count + 1;
@@ -14,9 +13,19 @@ increaseBtn.onclick = function () {
 
 // Decrease Button Function
 decreaseBtn.onclick = function () {
-  count--;
-  countLabel.textContent = count;
+  if (count == 0) {
+    decreaseBtn.disabled = true;
+  } else {
+    count--;
+    countLabel.textContent = count;
+  }
 };
+
+// decreaseBtn.onclick = function () {
+
+//   count = count - 1;
+//   countLabel.textContent = count;
+// };
 
 // Reset Button Function
 resetBtn.onclick = function () {
